@@ -1,28 +1,39 @@
-# Chaarvee English Coach v2
-Vercel-ready Next.js app for an age-appropriate Grade 8–9 reading and writing coach.
+# Chaarvee English Coach v3
 
-## Features
-- Student dashboard
-- Parent/student mode UI
-- Age-appropriate built-in reading library
-- Reading comprehension + evidence-based response
-- Writing prompts from Grade 8 through Grade 9 bridge
-- Server-side OpenAI evaluation API
-- 40-point rubric and revision-oriented coaching
-- Local progress storage out of the box
-- Optional Supabase schema for cloud persistence/auth
+A Vercel-ready Next.js app for independent Grade 8 English practice.
 
-## Run
+## v3 capabilities
+
+- Unlimited-on-demand AI-generated reading exercises
+- Unlimited-on-demand AI-generated writing prompts
+- Adaptive difficulty: Grade 8 → Grade 8+ → Grade 9 → Grade 9+ → AP/IB Foundation
+- Personalized skill targeting from recent rubric scores
+- Age-appropriate original content generation
+- Reading comprehension, inference, vocabulary and evidence questions
+- Writing evaluation using an 8-category /40 rubric
+- Revision and re-evaluation workflow
+- Local progress history
+- Supabase-ready schema for cloud persistence/authentication
+
+"Unlimited" means the application does not have a fixed content catalog; actual usage remains subject to your OpenAI account's quotas, rate limits and spend controls.
+
+## Run locally
+
+```bash
 npm install
+cp .env.example .env.local
 npm run dev
+```
 
-## Environment variables
+Open http://localhost:3000.
+
+## Required AI environment variables
+
+```text
 OPENAI_API_KEY=...
 OPENAI_MODEL=gpt-5-mini
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+```
 
-The app works without Supabase; it uses localStorage. The AI evaluator requires OPENAI_API_KEY.
+## Supabase
 
-## Vercel
-Import this repo, add environment variables, and deploy.
+See `DEPLOY.md` for the exact setup steps and `supabase/schema.sql` for the database/RLS schema.
